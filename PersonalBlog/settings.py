@@ -29,7 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    'mypersonalblog-vidv.onrender.com',  # <-- correct, no https:// and no trailing slash
+    'mypersonalblog-vidv.onrender.com',  
 ]
 
 
