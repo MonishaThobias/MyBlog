@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="z-index: 999;">
+    {% load static %}
+    <div class="container-fluid">
+        <a class="navbar-brand" id="search-toggle" style="cursor:pointer;"><span class="fa fa-search"></span></a>
+            
+<!-- Hidden Search Form -->
+    <form id="search-form" class="d-none ms-2" method="get" action="{% url 'search' %}">
+      <input class="form-control" type="text" name="q" placeholder="Search..." required>
+    </form>
+
+        <ul class="nav navbar-nav justify-content-end ms-auto">
+            <li class="nav-item"><a class="nav-link" href="https://www.facebook.com/"><span class="fab fa-facebook"  aria-hidden="true"></span></a></li>
+            <li class="nav-item"><a class="nav-link" href="https://instagram.com/"><span class="fab fa-instagram"  aria-hidden="true"></span></a></li>
+            <li class="nav-item"><a class="nav-link" href="https://github.com/"><span class="fab fa-github"  aria-hidden="true"></span></a></li>  
+          
+        </ul>
+    </div>
+</nav>
+
+<script>
+  document.getElementById("search-toggle").addEventListener("click", function() {
+    const searchForm = document.getElementById("search-form");
+    searchForm.classList.toggle("d-none");
+
+    // Autofocus the input when shown
+    if (!searchForm.classList.contains("d-none")) {
+      searchForm.querySelector("input").focus();
+    }
+  });
+</script>

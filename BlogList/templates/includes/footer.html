@@ -1,0 +1,72 @@
+
+<nav class="bg-overlay">
+    <div class="container pt-5 pb-5">
+        <div class="row">
+            <h2 class="text-center">Let me know what's on your mind</h2>
+            <form id="contact-form" class="col-sm-12 col-md-8 mx-auto mt-4" method="post">
+    <div class="form-group">
+        <div class="row mb-3">
+            <div class="col-6"> 
+                <label for="fname">First Name <em>*</em></label>
+                <input type="text" name="fname" class="form-control" id="fname" required>
+            </div>
+            <div class="col-6">
+                <label for="lname">Last Name <em>*</em></label>
+                <input type="text" name="lname" class="form-control" id="lname" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-12">
+                <label for="contact-email">Email <em>*</em></label>
+                <input type="email" name="email" class="form-control" id="contact-email" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-12">
+                <label for="message">Leave us a message <em>*</em></label>
+                <textarea class="form-control" name="message" id="message" rows="5" required></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <button type="submit" class="btn bg-custom text-white w-25 mx-auto">Submit</button>
+        </div>
+    </div>
+</form>
+
+        </div>
+    </div>
+</nav>
+<div class="bg-custom text-center text-white p-1 mb-0">
+    <p class="mt-1">© 2025 Blog. All rights reserved.</p>
+    
+</div>
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function(){
+    emailjs.init("UfRxekF95nKWqgcGd");
+  })();
+</script>
+<script>
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+  event.preventDefault(); 
+
+  emailjs.sendForm(
+    "service_2c0ccpb",   
+    "template_gaw9err",  
+    e.target,
+    "UfRxekF95nKWqgcGd"    
+  ).then(
+    function() {
+      alert("✅ Message sent successfully!");
+      document.getElementById("contact-form").reset();
+    },
+    function(error) {
+      alert("❌ Failed to send message. Error: " + JSON.stringify(error));
+    }
+  );
+});
+</script>
+
+

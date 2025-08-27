@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+body{
+     font-family: "Gabriela", serif;
+     color: rgb(0,0,0);
+}
+.bg-custom {
+        background-color: rgb(187 90 58);
+     
+}
+.bg-custom{
+        border: 1px solid rgb(187 90 58);
+        color:rgb(187 90 58) ;
+}
+.bg-custom:hover{
+        background-color:rgb(187 90 58);
+        color:  rgb(255 255 255);
+}
+
+.bg-overlay{
+        background-color: rgb(252 222 217 / 40%);
+}
+.custom-post-content a{
+ text-decoration: none;
+ color:rgb(0,0,0) ;
+}
+.custom-post-content a:hover{
+ color: rgb(187 90 58);
+}
+.form-control{
+        border: none;
+        background-color: transparent;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    border-radius: 0;
+}
+.custom-link{
+    text-decoration: none;
+    color: rgb(0,0,0);
+}
+.custom-link:hover{
+    color: rgb(187 90 58);
+}

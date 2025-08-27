@@ -1,0 +1,100 @@
+{% extends 'master.html' %}
+{% load static %}
+
+{% block title %}Home - My Blog{% endblock %}
+
+{% block content %}
+<nav>
+        <img src="{% static 'images/9.png' %}" alt="Banner 1" width="500" height="500" class="img-fluid m-0 p-0">   
+        <img src="{% static 'images/5.png' %}" alt="Banner 2"   width="500" height="500"  class="img-fluid">   
+        <img src="{% static 'images/11.png' %}" alt="Banner 3"  width="500"  height="500"  class="img-fluid">
+
+</nav>
+
+<div class="container-fluid">
+    <div class="row"  style="margin-top: -100px; z-index: 999;">
+        <div class="col">
+
+        </div>
+        <div class="col bg-light mx-5">
+            <h1 class="text-center mt-5 pb-5">My Life. My Blog. </h1>
+           </div>
+        <div class="col"></div>
+    </div>
+
+<div class="container mt-4">
+<div class="row">
+    <div class="col-sm-12 col-md-7" id="posts-section">
+         {% for post in posts %}
+<div class="card mb-3">
+    <div class="row">
+        <div class="col-sm-6">
+                    <img src="{{ post.image.url }}" class="img-fluid" alt="{{ post.title }}" style="height: 300px;width: 300px;">
+        </div>
+        <div class="col-sm-6 custom-post-content">
+           
+                    <small class="text-muted mx-2 my-4">{{ post.created_date }} - {{ post.created_time }}</small>
+
+ <a href="#">
+<h3 class="mx-2 my-4">{{post.title}}</h3>
+<p class="mx-2 my-4">{{post.content}}...
+
+</p>
+</a>
+        </div>
+    </div>
+</div>
+{% endfor %}
+<div class="row">
+<a href="{%  url 'blog_list' %}" class="btn bg-custom text-white my-5 w-25">All Posts</a>
+
+</div>
+
+
+    </div>
+    <div class="col-md-5 col-sm-12 bg-overlay" id="newsletter-section">
+        <div class="card bg-custom text-white m-5 p-5">
+            <div class="mx-3">
+                <h2 class="mb-3">Let the posts come to you</h2>
+
+                <form method="post" id="subscribeForm" novalidate>
+                    {% csrf_token %}
+           
+                       <label for="id_email">Email <em>*</em></label>
+                    <input type="text" name="email" id="id_email" class="form-control mb-3" value="{{form.email.value | default_if_none:''}}" />
+                    {% if form.email.errors %}
+    <div class="text-danger small">
+        {{ form.email.errors.0 }}
+    </div>
+{% endif %}
+                    <span class="form-check">
+                        <input type="checkbox" name="subscribe" id="" class="form-check-input" {% if form.data.subscribe %}checked{% endif %}>
+                         Yes, Subscribe me to your newsletter <em>*</em>
+                    </span>
+                    {% if form.errors.subscribe %}
+        <div class="text-danger small">{{ form.errors.subscribe.0 }}</div>
+    {% endif %}
+                    <button type="submit" class="btn btn-light w-100 mt-5"> Subscribe</button>
+                    <div id="subscribe-messages">
+    {% if message.success %}
+        <p class="small text-success">{{ message.success }}</p>
+    {% endif %}
+    {% if message.error %}
+        <p class="small text-danger">{{ message.error }}</p>
+    {% endif %}
+</div>
+                </form>
+            </div>
+
+    </div>
+</div>
+</div>
+</div>
+
+
+{% endblock %}
+
+
+{% block extra_js %}    
+<script src="{% static 'js/Script.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,28 @@
+.custom-link a{
+    text-decoration: none;
+    color: rgb(0,0,0);
+}
+.custom-link a:hover{
+    color: rgb(187 90 58);
+}
+.custom-link{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.custom-btn{
+    background-color: transparent;
+    color:rgb(187 90 58) ;
+    border: 1px solid rgb(187 90 58);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+}
+
+.custom-btn:hover{
+    background-color:rgb(187 90 58);
+    color:#ffff ;
+    border: rgb(187 90 58);
+ 
+}
