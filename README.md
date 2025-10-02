@@ -3,7 +3,7 @@
 📝 myBlog
 
 A personal blogging platform built with Django, allowing users to create, edit, and manage blog posts with a clean and simple interface.
-
+Live on : https://mypersonalblog-vidv.onrender.com/
 📌 Features
 
 
