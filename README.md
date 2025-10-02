@@ -24,7 +24,7 @@ Frontend: HTML, CSS, Bootstrap
 
 🛠️ Setup Instructions
 1. Clone the repository
-git clone https://github.com/yourusername/myBlog.git
+git clone https://github.com/MonishaThobias/MyBlog.git
 cd myBlog
 
 2. Create and activate a virtual environment
